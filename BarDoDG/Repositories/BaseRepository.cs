@@ -1,4 +1,5 @@
-﻿using BarDoDG.Models;
+﻿using BarDoDG.Data;
+using BarDoDG.Models;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;

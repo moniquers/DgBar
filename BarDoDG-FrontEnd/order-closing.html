@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <title>Bar do DG</title>
+
+    <link rel="stylesheet" href="vendor/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="my-5 page-section">
+            <h2 class="mb-4">Bar do DG</h2>
+            <h3><span id="orderSummaryTitle"></span> fechada</h3>
+            <input type="hidden" id="orderId">
+            <div class="px-3">
+                <div class="row headerLine">
+                    <div class='col-5'>Descrição</div>
+                    <div class='col-2'>Quantidade</div>
+                    <div class='col-5'>Valor</div>
+                </div>
+            </div>
+            <div id="orderSummary">
+            </div>
+            <div class="row">
+            <div class="col-md-4">
+                <button type="button" id="orderBackButton" class="btn btn-outline-secondary my-3">
+                    Voltar
+                </button>
+            </div> 
+            <div class="col-md-4">
+                <button type="button" id="orderResetButton" class="btn btn-success my-3">
+                    <span aria-hidden="true"></span>
+                    Resetar comanda
+                </button>
+            </div> 
+            </div>
+        </div>
+    </div>
+    </section>
+
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+    <script src="js/custom.js"></script>
+
+</body>
+
+</html>

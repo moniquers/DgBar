@@ -7,7 +7,17 @@ namespace BarDoDG.Models
 {
     public class Order: BaseModel
     {
-        public string Status { get; set; }
+        public Order()
+        {
+        }
+        public Order(string code, bool closed)
+        {
+            Code = code;
+            Closed = closed;
+        }
+
+        public string Code { get; set; }
+        public bool Closed { get; set; }
         public List<OrderItem> Items { get; set; }
     }
 }

@@ -1,0 +1,51 @@
+h2, h3 {
+    color:#656262;
+}
+
+@media (min-width: 768px) {
+    body{
+        background-color: #f7f0f7;
+        background-repeat: no-repeat;
+        background-attachment: scroll;
+        background-position: top left;
+        background-size: cover;
+    }
+}
+
+.page-section {
+    padding: 20px 15px;
+    background-color: #f1f1f1;
+}
+
+@media (min-width: 768px) {
+.page-section {
+        padding: 50px 80px;
+        border-radius: 8px;
+        background-color: #f1f1f1;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    }
+}
+
+#orderSummary {
+    padding: 10px;
+}
+
+#orderSummary>div {
+    padding: 10px;
+    border-bottom: solid 1px #ccc;
+}
+
+.elementHidden {
+    visibility: hidden;
+}
+
+.discountLine {
+    color: #862020;
+}
+.orderAmountLine {
+    font-weight: 600;
+}
+.headerLine {
+    padding: 15px 15px 2px 2px;
+    font-weight: 600;
+}

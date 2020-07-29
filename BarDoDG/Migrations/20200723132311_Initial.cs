@@ -12,7 +12,8 @@ namespace BarDoDG.Migrations
                 {
                     Id = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    Status = table.Column<string>(nullable: true)
+                    Code = table.Column<string>(nullable: false),
+                    Closed = table.Column<bool>(nullable: false)
                 },
                 constraints: table =>
                 {
@@ -41,7 +42,7 @@ namespace BarDoDG.Migrations
                         .Annotation("SqlServer:Identity", "1, 1"),
                     ProductId = table.Column<int>(nullable: true),
                     OrderId = table.Column<int>(nullable: true),
-                    Quantity = table.Column<int>(nullable: false)
+                    Amount = table.Column<int>(nullable: false)
                 },
                 constraints: table =>
                 {

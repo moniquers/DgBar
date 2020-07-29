@@ -1,4 +1,6 @@
-﻿using BarDoDG.Repositories;
+﻿using BarDoDG.ApiModels;
+using BarDoDG.Models;
+using BarDoDG.Repositories;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
@@ -9,9 +11,9 @@ namespace BarDoDG.Controllers
 {
     [ApiController]
     [Route("[Controller]")]
-    public class OrderController: ControllerBase
+    public class OrderController : ControllerBase
     {
-        private IOrderRepository _orderRepository;
+        private readonly IOrderRepository _orderRepository;
 
         public OrderController(IOrderRepository orderRepository)
         {
@@ -19,9 +21,53 @@ namespace BarDoDG.Controllers
         }
 
         [HttpGet]
-        public void Get()
+        public IEnumerable<IdentifierResponse> Get()
         {
-            _orderRepository.Get();
+            return _orderRepository.Get();
+        }
+
+        [HttpGet("{id}")]
+        public OrderResponse Get(int id)
+        {
+            return _orderRepository.GetOrder(id);
+        }
+
+        [HttpPost]
+        public IActionResult Post(OrderItemRequest orderItemRequest)
+        {
+            var errorMessage = _orderRepository.AddItem(orderItemRequest);
+            var response = new DefaultResponse
+            {
+                Success = string.IsNullOrWhiteSpace(errorMessage),
+                ErrorMessage = errorMessage
+            };
+
+            if (!response.Success)
+                return BadRequest(response);
+
+            return Ok(response);
+        }
+
+        [HttpPut("{id}")]
+        public IActionResult Put(int id)
+        {
+            var response = new DefaultResponse
+            {
+                Success = _orderRepository.OrderClose(id)
+            };
+
+            return Ok(response);
+        }
+
+        [HttpDelete("{id}")]
+        public IActionResult Delete(int id)
+        {
+            var response = new DefaultResponse
+            {
+                Success = _orderRepository.OrderReset(id)
+            };
+            return Ok(response);
         }
     }
 }
+
