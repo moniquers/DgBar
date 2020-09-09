@@ -1,4 +1,4 @@
-Projeto de avaliação desenvolvido nas seguintes tecnologias:
+Projeto de avaliação que implementa um sistema simples de comandas desenvolvido nas seguintes tecnologias:
 - Back-end:
   - API RESTful .Net Core 3.1
   - SQLServer + EF Core
